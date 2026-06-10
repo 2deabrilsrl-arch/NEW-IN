@@ -1,0 +1,172 @@
+============================================================
+REPORTE DIAGNOSTICO NEW IN - Analisis Detallado
+Generado: 2026-01-02
+============================================================
+
+RESUMEN EJECUTIVO
+============================================================
+Estado del sistema: FUNCIONANDO (ultima ejecucion: 02/01 14:00)
+Match rate critico: SOLO 18% (2 de 11 productos)
+Problema principal: PRODUCTOS NO ESTAN EN TIENDANUBE
+
+
+ANALISIS POR FECHA (29/12 al 02/01)
+============================================================
+
+--- 29/12/2025 (Domingo) ---
+Estado: Sin movimientos en Dragonfish
+SKUs detectados: 0
+Productos asignados: 0
+Observacion: Despues del refresh semanal, sin actividad
+
+--- 30/12/2025 (Lunes) ---
+Estado: ACTIVIDAD DETECTADA
+SKUs detectados en Dragonfish: 11 productos nuevos
+Match exitoso: 2 de 11 (18%)
+Productos asignados a New In: 2
+SKUs SIN MATCH (no estan en Tiendanube):
+  1. ACC-BOOB TAPE#271#UNICO
+  2. CONTROL MARIA#369#UNICO
+  + 7 SKUs adicionales sin match (no detallados en log)
+
+PROBLEMA: El log muestra "2 (primeros 20)" pero deberian ser 9 sin match
+
+--- 31/12/2025 (Martes) ---
+Estado: Sin movimientos en Dragonfish
+SKUs detectados: 0
+Productos asignados: 0
+
+--- 01/01/2026 (Miercoles) ---
+Estado: Sin movimientos en Dragonfish
+SKUs detectados: 0
+Productos asignados: 0
+
+--- 02/01/2026 (Jueves - HOY) ---
+Estado: Sin movimientos en Dragonfish
+SKUs detectados: 0
+Productos asignados: 0
+
+
+DIAGNOSTICO DEL PROBLEMA
+============================================================
+
+SINTOMA:
+- Productos visibles en tu sistema Zoologic NO aparecen en New In
+- Ejemplos mencionados: ACC-BOOB TAPE, B-3729, SAYKA
+
+CAUSA RAIZ:
+El sistema NEW IN solo puede asignar productos a la categoria si:
+  1. Estan en Dragonfish (Zoologic) ✓ CONFIRMADO
+  2. Estan PUBLICADOS en Tiendanube ✗ FALLA AQUI
+
+EVIDENCIA:
+- ACC-BOOB TAPE detectado en Dragonfish el 30/12
+- NO pudo machearse = NO esta en Tiendanube
+- Match rate 18% indica que 82% de productos nuevos no estan publicados
+
+PRODUCTOS QUE FALTAN (desde tus comentarios):
+1. ACC-BOOB TAPE#271#UNICO - CONFIRMADO no esta en TN
+2. CONTROL MARIA#369#UNICO - CONFIRMADO no esta en TN  
+3. B-3729 (todas las variantes) - NO aparece en logs recientes
+4. SAYKA (toda la marca) - NO aparece en logs recientes
+
+
+ESTADO DEL REFRESH SEMANAL
+============================================================
+Ultimo refresh: 29/12/2025 14:00
+- Limpio 133 productos de la categoria
+- Sistema reseteo correctamente
+- Proximo refresh: Lunes 06/01/2026
+
+
+CONCLUSIONES Y RECOMENDACIONES
+============================================================
+
+1. SISTEMA NEW IN: Funcionando correctamente
+   - Ejecutandose diariamente a las 14:00
+   - Detecta productos nuevos de Dragonfish
+   - Asigna correctamente los que encuentra en TN
+
+2. PROBLEMA REAL: Pipeline de sincronizacion
+   - Los productos llegan a Dragonfish (Zoologic)
+   - NO se sincronizan/publican automaticamente a Tiendanube
+   - El robot New In no puede categorizar lo que no existe en TN
+
+3. PRODUCTOS MENCIONADOS:
+   
+   ACC-BOOB TAPE:
+   - Detectado en Dragonfish el 30/12
+   - NO sincronizado a Tiendanube
+   - Requiere publicacion manual o automatica
+   
+   CONTROL MARIA:
+   - Detectado en Dragonfish el 30/12
+   - NO sincronizado a Tiendanube
+   - Requiere publicacion manual o automatica
+   
+   B-3729:
+   - NO aparece en logs de Dragonfish (29/12 al 02/01)
+   - Verificar si esta en Zoologic con fecha correcta
+   - Posible problema en ingreso a Dragonfish
+   
+   SAYKA (marca completa):
+   - NO aparece en logs de Dragonfish
+   - Verificar si productos estan ingresados en Zoologic
+   - Verificar fechas de ingreso
+
+4. MATCH RATE CRITICO (18%):
+   - Solo 2 de cada 11 productos se publican
+   - 82% de productos nuevos quedan sin categorizar
+   - Indica problema sistematico en sincronizacion
+
+
+ACCIONES NECESARIAS
+============================================================
+
+INMEDIATO:
+1. Verificar proceso de sincronizacion Zoologic -> Tiendanube
+2. Confirmar que productos estan PUBLICADOS (no solo ingresados)
+3. Revisar si hay filtros o reglas que bloqueen la publicacion
+
+CORTO PLAZO:
+1. Publicar manualmente ACC-BOOB TAPE y CONTROL MARIA en TN
+2. Verificar ingreso de B-3729 en Zoologic
+3. Verificar ingreso completo de marca SAYKA
+
+MEDIANO PLAZO:
+1. Diagnosticar por que solo 18% de productos se sincronizan
+2. Mejorar pipeline de sincronizacion automatica
+3. Agregar monitoreo de match rate (alertar si <50%)
+
+
+PROXIMOS PASOS DIAGNOSTICOS
+============================================================
+
+Para profundizar el diagnostico:
+
+1. Verificar en Tiendanube:
+   - Buscar ACC-BOOB TAPE manualmente
+   - Buscar CONTROL MARIA manualmente
+   - Si no existen: problema de sincronizacion confirmado
+
+2. Verificar en Zoologic:
+   - Confirmar que B-3729 esta ingresado
+   - Confirmar que SAYKA esta ingresada
+   - Verificar fechas de ingreso (deben ser recientes)
+
+3. Verificar proceso de sincronizacion:
+   - ¿Existe un script/servicio de sincronizacion?
+   - ¿Se ejecuta automaticamente o es manual?
+   - ¿Hay logs de este proceso?
+
+
+CONTACTO PARA SOPORTE
+============================================================
+El sistema New In esta funcionando correctamente.
+El problema es PREVIO a New In: los productos no llegan a TN.
+
+Necesitas revisar:
+- Configuracion de sincronizacion Zoologic -> Tiendanube
+- Reglas de publicacion automatica
+- Estado de los productos en ambos sistemas
+============================================================

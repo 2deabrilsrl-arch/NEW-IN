@@ -1,0 +1,242 @@
+==========================================================================
+ACTUALIZACIÓN A v12.1.0-REPORTES - REPORTES DIARIOS AUTOMÁTICOS
+==========================================================================
+
+Esta actualización agrega generación automática de reportes diarios con:
+- Detalle de productos agregados por marca
+- Productos encontrados vs no encontrados
+- Un archivo por día para auditoría
+- Limpieza automática semanal (mantiene últimos 7 días)
+
+==========================================================================
+INSTALACIÓN (5 MINUTOS)
+==========================================================================
+
+1. Hacer backup del robot actual:
+   
+   cd C:\Users\santiago\NEW IN
+   copy newin_robot.py newin_robot_v12.0_BACKUP.py
+
+2. Reemplazar con nueva versión:
+   
+   copy /Y newin_robot_v12.py newin_robot.py
+
+3. Verificar instalación:
+   
+   python newin_robot.py who
+
+   Debe mostrar: "New In Robot v12.1.0-REPORTES"
+
+==========================================================================
+NUEVAS FUNCIONALIDADES
+==========================================================================
+
+1. REPORTES DIARIOS AUTOMÁTICOS
+   
+   Ubicación: C:\Users\santiago\NEW IN\logs\reportes_diarios\
+   
+   Cada ejecución diaria genera:
+   REPORTE_DAILY_2026-02-02.txt
+   REPORTE_DAILY_2026-02-03.txt
+   ...
+
+2. CONTENIDO DE CADA REPORTE
+   
+   - Fecha de ejecución
+   - Resumen general:
+     * Códigos madre procesados
+     * Match rate (%)
+     * Productos nuevos vs que ya estaban
+   
+   - Detalle por marca:
+     * MK (MARCELA KOURY)
+       - Cantidad: 5
+       - Códigos: MK-10137, MK-5556, ...
+     
+     * T (TIENTO)
+       - Cantidad: 12
+       - Códigos: T-1100, T-1013, ...
+   
+   - Productos NO encontrados (si hay):
+     * Lista de códigos que ingresaron en Dragonfish
+       pero no están en Tiendanube todavía
+
+3. LIMPIEZA AUTOMÁTICA
+   
+   El refresh semanal (lunes 17:55) elimina reportes >7 días.
+   
+   Resultado: Siempre tenés los últimos 7 días disponibles
+              para auditoría y cotejo.
+
+==========================================================================
+EJEMPLO DE USO
+==========================================================================
+
+SITUACIÓN:
+El viernes notás que falta un producto que debería estar en New In.
+
+DIAGNÓSTICO:
+1. Ir a: C:\Users\santiago\NEW IN\logs\reportes_diarios\
+
+2. Abrir: REPORTE_DAILY_2026-01-30.txt (jueves)
+
+3. Buscar el código del producto:
+   
+   Si está en "PRODUCTOS AGREGADOS" → Se procesó correctamente
+   Si está en "PRODUCTOS NO ENCONTRADOS" → No está en TN todavía
+   Si NO aparece → No ingresó en Dragonfish con motivo ING
+
+4. Cotejar con Dragonfish para confirmar.
+
+==========================================================================
+VERIFICACIÓN POST-INSTALACIÓN
+==========================================================================
+
+1. Ejecutar manualmente para probar:
+   
+   python newin_robot.py daily
+
+2. Verificar que se generó el reporte:
+   
+   dir logs\reportes_diarios\REPORTE_DAILY_*.txt
+
+3. Abrir el reporte y verificar contenido:
+   
+   type logs\reportes_diarios\REPORTE_DAILY_2026-02-02.txt
+
+4. Debe mostrar:
+   - Resumen con estadísticas
+   - Detalle por marca
+   - Códigos procesados
+
+==========================================================================
+ESTRUCTURA DE ARCHIVOS
+==========================================================================
+
+C:\Users\santiago\NEW IN\
+├── newin_robot.py (v12.1.0-REPORTES)
+├── config.env
+├── data\
+│   ├── state.json
+│   └── newin_category.json
+└── logs\
+    ├── daily.log (log técnico completo)
+    └── reportes_diarios\ (NUEVO)
+        ├── REPORTE_DAILY_2026-01-27.txt
+        ├── REPORTE_DAILY_2026-01-28.txt
+        ├── REPORTE_DAILY_2026-01-29.txt
+        ├── REPORTE_DAILY_2026-01-30.txt
+        ├── REPORTE_DAILY_2026-01-31.txt
+        ├── REPORTE_DAILY_2026-02-01.txt
+        └── REPORTE_DAILY_2026-02-02.txt
+        (máximo 7 archivos, limpieza automática)
+
+==========================================================================
+DIFERENCIAS CON EL LOG TÉCNICO (daily.log)
+==========================================================================
+
+daily.log:
+- Log técnico continuo
+- Todas las ejecuciones en un solo archivo
+- Detalles de API calls, errores, debugging
+- Para desarrolladores/troubleshooting
+
+reportes_diarios/:
+- Un archivo por día
+- Formato legible para humanos
+- Organizado por marca
+- Para auditoría de negocio
+- Para cotejo con Dragonfish
+
+==========================================================================
+AUTOMATIZACIÓN
+==========================================================================
+
+NO REQUIERE CONFIGURACIÓN ADICIONAL
+
+Las tareas ya configuradas se encargan de todo:
+
+- NewInDaily (18:00 diario):
+  * Procesa productos
+  * Genera reporte del día
+  * Guarda en reportes_diarios/
+
+- NewInWeeklyRefresh (lunes 17:55):
+  * Limpia New In
+  * Elimina reportes >7 días
+  * Mantiene última semana
+
+==========================================================================
+PREGUNTAS FRECUENTES
+==========================================================================
+
+P: ¿Los reportes ocupan mucho espacio?
+R: No, ~2-5 KB por día, ~35 KB por semana máximo.
+
+P: ¿Puedo cambiar cuántos días mantener?
+R: Sí, en el código cambiá: limpiar_reportes_viejos(dias_mantener=7)
+   Por ejemplo, dias_mantener=14 para 2 semanas.
+
+P: ¿Qué pasa si elimino reportes manualmente?
+R: Nada, el robot genera uno nuevo cada día. No afecta operación.
+
+P: ¿Puedo ver reportes de hace más de 7 días?
+R: Después del refresh semanal se eliminan. Si querés conservar alguno,
+   copialo a otra carpeta antes del lunes.
+
+P: ¿Los reportes afectan el rendimiento?
+R: No, se generan en ~0.1 segundos al final de cada ejecución.
+
+==========================================================================
+BENEFICIOS PARA TU OPERACIÓN
+==========================================================================
+
+✅ AUDITORÍA SIMPLE
+   - Revisá en 10 segundos qué se procesó cada día
+   - No necesitás leer logs técnicos complejos
+
+✅ COTEJO CON DRAGONFISH
+   - Comparás fácilmente:
+     * Lo que ingresó en DF
+     * Lo que el robot subió a TN
+     * Lo que falta subir
+
+✅ CONTROL POR MARCA
+   - Verificás rápidamente si una marca específica se procesó
+   - Ves cuántos productos de cada marca entraron
+
+✅ DETECCIÓN TEMPRANA
+   - Detectás productos que no matchean
+   - Identificás si falta cargar productos en TN
+
+✅ SIN MANTENIMIENTO
+   - Limpieza automática
+   - No se acumulan archivos
+   - Siempre tenés la última semana
+
+==========================================================================
+SOPORTE
+==========================================================================
+
+Si tenés problemas:
+
+1. Verificar versión:
+   python newin_robot.py who
+   Debe mostrar: v12.1.0-REPORTES
+
+2. Ver log completo:
+   type logs\daily.log
+
+3. Verificar carpeta reportes:
+   dir logs\reportes_diarios
+
+==========================================================================
+RESUMEN
+==========================================================================
+
+1. Backup: copy newin_robot.py newin_robot_v12.0_BACKUP.py
+2. Actualizar: copy /Y newin_robot_v12.py newin_robot.py
+3. Verificar: python newin_robot.py who
+4. Listo: Los reportes se generan automáticamente
+
+==========================================================================

@@ -1,0 +1,227 @@
+==========================================================================
+INSTRUCCIONES DE INSTALACIÓN - NEW IN ROBOT v12.0.0-MADRE
+==========================================================================
+
+Este paquete contiene las correcciones críticas para el robot New In.
+
+CAMBIOS PRINCIPALES:
+- Matching por CÓDIGO MADRE en vez de SKU completo
+- Aumenta match rate de 6% a 80%+ esperado
+- Evita duplicados automáticamente
+- Muestra productos completos en New In (no variantes individuales)
+
+==========================================================================
+PASO 1: BACKUP DE ARCHIVOS ACTUALES
+==========================================================================
+
+1. Ir a: C:\Users\santiago\NEW IN
+
+2. Crear carpeta de backup:
+   mkdir backup_v11
+
+3. Copiar archivos actuales:
+   copy newin_robot.py backup_v11\
+   copy config.env backup_v11\
+   copy data\state.json backup_v11\
+   copy data\newin_category.json backup_v11\
+
+==========================================================================
+PASO 2: INSTALAR NUEVA VERSIÓN
+==========================================================================
+
+1. Copiar el archivo "newin_robot_v12.py" a:
+   C:\Users\santiago\NEW IN\
+
+2. Renombrar el archivo:
+   - ELIMINAR o renombrar: newin_robot.py (a newin_robot_v11_OLD.py)
+   - RENOMBRAR: newin_robot_v12.py -> newin_robot.py
+
+   Comandos:
+   cd C:\Users\santiago\NEW IN
+   ren newin_robot.py newin_robot_v11_OLD.py
+   ren newin_robot_v12.py newin_robot.py
+
+3. Verificar instalación:
+   python newin_robot.py who
+
+   Debe mostrar:
+   New In Robot v12.0.0-MADRE
+   [TN] STORE_ID=6566743
+   ...
+
+==========================================================================
+PASO 3: CAMBIAR HORARIO A LAS 18:00
+==========================================================================
+
+Actualmente el robot corre a las 14:00. Cambiarlo a 18:00:
+
+schtasks /Change /TN "NewInRobot" /ST 18:00
+
+Verificar el cambio:
+
+schtasks /Query /TN "NewInRobot" /V /FO LIST | findstr /C:"Hora"
+
+Debe mostrar:
+Hora de inicio:           6:00:00 p. m.
+
+==========================================================================
+PASO 4: SINCRONIZACIÓN MANUAL DE LA SEMANA 26/01 - 31/01
+==========================================================================
+
+Para recuperar todos los productos de la semana pasada:
+
+1. Copiar el archivo "sync_semana_26_31.py" a:
+   C:\Users\santiago\NEW IN\
+
+2. Ejecutar:
+   cd C:\Users\santiago\NEW IN
+   python sync_semana_26_31.py
+
+3. Este script:
+   - Consultará Dragonfish del 26/01 al 31/01
+   - Extraerá códigos madre únicos
+   - Los agregará a la categoría NEW IN
+   - Generará reporte en: logs\SYNC_SEMANA_26_31_REPORTE.txt
+
+4. Revisar el reporte para ver:
+   - Cuántos productos se agregaron
+   - Match rate obtenido
+   - Productos que no se encontraron
+
+NOTA: Este script NO modifica state.json, así que no interferirá con
+      la sincronización automática del lunes.
+
+==========================================================================
+PASO 5: PRUEBA DEL ROBOT ACTUALIZADO (OPCIONAL)
+==========================================================================
+
+Para probar sin afectar la producción:
+
+1. Ejecutar manualmente:
+   python newin_robot.py daily
+
+2. Verificar en el log:
+   type logs\daily.log
+
+3. Buscar en el log:
+   - "New In Robot v12.0.0-MADRE" (versión correcta)
+   - "Códigos madre únicos: X" (extracción exitosa)
+   - "Códigos madre con match: X / Y (Z%)" (match rate)
+   - "[SUCCESS] Asignados X productos" (asignación exitosa)
+
+==========================================================================
+PASO 6: VERIFICAR EN TIENDANUBE
+==========================================================================
+
+1. Ir a: https://www.tiendanube.com/admin/6566743/categories/34806213
+
+2. Verificar que aparezcan los productos nuevos de la semana
+
+3. Los clientes deberían ver:
+   - Productos COMPLETOS (no variantes individuales)
+   - Con todas sus variantes disponibles (talles/colores)
+   - Sin duplicados
+
+==========================================================================
+PASO 7: MONITOREO CONTINUO
+==========================================================================
+
+El robot ahora correrá automáticamente a las 18:00 todos los días.
+
+Para monitorear:
+
+1. Revisar logs diarios:
+   type logs\daily.log
+
+2. Ver últimas ejecuciones:
+   type logs\daily.log | findstr /C:"DAILY UPDATE"
+
+3. Ver match rate reciente:
+   type logs\daily.log | findstr /C:"Códigos madre con match"
+
+4. Ver productos asignados:
+   type logs\daily.log | findstr /C:"SUCCESS"
+
+==========================================================================
+SOLUCIÓN DE PROBLEMAS
+==========================================================================
+
+PROBLEMA: "Module 'requests' not found"
+SOLUCIÓN: pip install requests --break-system-packages
+
+PROBLEMA: Match rate sigue siendo bajo (<50%)
+SOLUCIÓN: 
+  1. Verificar que los productos estén cargados en TN
+  2. Verificar formato de SKUs en TN vs Dragonfish
+  3. Ejecutar: python newin_robot.py who
+  4. Revisar logs para ver qué códigos no matchean
+
+PROBLEMA: Robot no se ejecuta a las 18:00
+SOLUCIÓN:
+  1. Verificar Task Scheduler: schtasks /Query /TN "NewInRobot" /V
+  2. Verificar que la PC esté encendida a las 18:00
+  3. Ejecutar manualmente para verificar que funciona
+
+PROBLEMA: Productos duplicados en New In
+SOLUCIÓN: No debería pasar con v12.0, pero si pasa:
+  1. Ejecutar: python newin_robot.py refresh (limpia categoría)
+  2. Ejecutar: python newin_robot.py daily (re-sincroniza)
+
+==========================================================================
+RESUMEN DE ARCHIVOS
+==========================================================================
+
+Archivos instalados:
+  newin_robot.py (v12.0.0-MADRE)    - Robot principal actualizado
+  sync_semana_26_31.py              - Script de sincronización manual
+  INSTRUCCIONES_INSTALACION.md      - Este archivo
+
+Archivos de backup (creados en PASO 1):
+  backup_v11\newin_robot.py         - Versión anterior
+  backup_v11\state.json             - Estado anterior
+  backup_v11\newin_category.json    - Categoría anterior
+
+Archivos de configuración (NO modificar):
+  config.env                        - Configuración actual
+  data\state.json                   - Estado actual
+  data\newin_category.json          - Categoría actual
+
+==========================================================================
+CAMBIOS TÉCNICOS DETALLADOS (PARA REFERENCIA)
+==========================================================================
+
+La nueva versión v12.0.0-MADRE cambia la lógica fundamental de matching:
+
+ANTES (v11.3.0):
+  1. Dragonfish: "T-1100#231#90"
+  2. Buscar en TN: ¿Existe variante con SKU exacto "T-1100#231#90"?
+  3. Si NO existe ese talle específico → NO MATCH
+  4. Resultado: Match rate 6%
+
+DESPUÉS (v12.0.0):
+  1. Dragonfish: "T-1100#231#90"
+  2. Extraer código madre: "T-1100"
+  3. Buscar en TN: ¿Existe ALGUNA variante con "T-1100"?
+  4. Si existe el producto T-1100 (aunque con otros talles) → MATCH
+  5. Agregar producto COMPLETO a New In
+  6. Evitar duplicados automáticamente
+  7. Resultado: Match rate esperado 80%+
+
+Funciones modificadas:
+  - Nueva: extract_madre_code() - Extrae código antes del primer #
+  - Nueva: tn_build_madre_index() - Indexa por código madre
+  - Modificada: daily_update() - Usa matching por código madre
+
+==========================================================================
+CONTACTO Y SOPORTE
+==========================================================================
+
+Si tenés problemas con la instalación o el funcionamiento:
+
+1. Revisar logs detallados en: logs\daily.log
+2. Ejecutar diagnóstico: python newin_robot.py who
+3. Verificar categoría: python newin_robot.py check_cat
+
+==========================================================================
+FIN DE LAS INSTRUCCIONES
+==========================================================================

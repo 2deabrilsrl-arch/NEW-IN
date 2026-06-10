@@ -1,0 +1,612 @@
+
+Carpeta: \
+Nombre de host:           SERVIDOR
+Nombre de tarea:          \Cron Nadin Web
+Hora pr¢xima ejecuci¢n:   02/02/2026 11:59:30 a.m.
+Estado:                   Listo
+Modo de inicio de sesi¢n: Interactivo/En segundo plano
+
+Nombre de host:           SERVIDOR
+Nombre de tarea:          \NewIn-Daily
+Hora pr¢xima ejecuci¢n:   02/02/2026 02:00:00 p.m.
+Estado:                   Listo
+Modo de inicio de sesi¢n: Solo interactivo
+
+Nombre de host:           SERVIDOR
+Nombre de tarea:          \NewIn-WeeklyRefresh
+Hora pr¢xima ejecuci¢n:   02/02/2026 02:00:00 p.m.
+Estado:                   Listo
+Modo de inicio de sesi¢n: Solo interactivo
+
+Nombre de host:           SERVIDOR
+Nombre de tarea:          \NewInDaily
+Hora pr¢xima ejecuci¢n:   02/02/2026 06:30:00 p.m.
+Estado:                   Listo
+Modo de inicio de sesi¢n: Solo interactivo
+
+Nombre de host:           SERVIDOR
+Nombre de tarea:          \NewInM-Daily
+Hora pr¢xima ejecuci¢n:   02/02/2026 02:00:00 p.m.
+Estado:                   Listo
+Modo de inicio de sesi¢n: Solo interactivo
+
+Nombre de host:           SERVIDOR
+Nombre de tarea:          \NewInM-WeeklyRefresh
+Hora pr¢xima ejecuci¢n:   02/02/2026 02:00:00 p.m.
+Estado:                   Listo
+Modo de inicio de sesi¢n: Solo interactivo
+
+Nombre de host:           SERVIDOR
+Nombre de tarea:          \NewInRefresh
+Hora pr¢xima ejecuci¢n:   02/02/2026 06:30:00 p.m.
+Estado:                   Listo
+Modo de inicio de sesi¢n: Solo interactivo
+
+Nombre de host:           SERVIDOR
+Nombre de tarea:          \Optimize Start Menu Cache Files-S-1-5-21-727047246-382319898-3001473582-1002
+Hora pr¢xima ejecuci¢n:   No disponible
+Estado:                   Listo
+Modo de inicio de sesi¢n: Solo interactivo
+
+Carpeta: \Microsoft
+Informaci¢n: no hay tareas programadas disponibles actualmente para el nivel de acceso.
+
+Carpeta: \Microsoft\Windows
+Informaci¢n: no hay tareas programadas disponibles actualmente para el nivel de acceso.
+
+Carpeta: \Microsoft\Windows\.NET Framework
+Nombre de host:           SERVIDOR
+Nombre de tarea:          \Microsoft\Windows\.NET Framework\.NET Framework NGEN v4.0.30319
+Hora pr¢xima ejecuci¢n:   No disponible
+Estado:                   Listo
+Modo de inicio de sesi¢n: Interactivo/En segundo plano
+
+Nombre de host:           SERVIDOR
+Nombre de tarea:          \Microsoft\Windows\.NET Framework\.NET Framework NGEN v4.0.30319 64
+Hora pr¢xima ejecuci¢n:   No disponible
+Estado:                   Listo
+Modo de inicio de sesi¢n: Interactivo/En segundo plano
+
+Nombre de host:           SERVIDOR
+Nombre de tarea:          \Microsoft\Windows\.NET Framework\.NET Framework NGEN v4.0.30319 64 Critical
+Hora pr¢xima ejecuci¢n:   No disponible
+Estado:                   Deshabilitado
+Modo de inicio de sesi¢n: Interactivo/En segundo plano
+
+Nombre de host:           SERVIDOR
+Nombre de tarea:          \Microsoft\Windows\.NET Framework\.NET Framework NGEN v4.0.30319 Critical
+Hora pr¢xima ejecuci¢n:   No disponible
+Estado:                   Deshabilitado
+Modo de inicio de sesi¢n: Interactivo/En segundo plano
+
+Carpeta: \Microsoft\Windows\Active Directory Rights Management Services Client
+Nombre de host:           SERVIDOR
+Nombre de tarea:          \Microsoft\Windows\Active Directory Rights Management Services Client\AD RMS Rights Policy Template Management (Automated)
+Hora pr¢xima ejecuci¢n:   No disponible
+Estado:                   Deshabilitado
+Modo de inicio de sesi¢n: Interactivo/En segundo plano
+
+Nombre de host:           SERVIDOR
+Nombre de tarea:          \Microsoft\Windows\Active Directory Rights Management Services Client\AD RMS Rights Policy Template Management (Automated)
+Hora pr¢xima ejecuci¢n:   No disponible
+Estado:                   Deshabilitado
+Modo de inicio de sesi¢n: Interactivo/En segundo plano
+
+Nombre de host:           SERVIDOR
+Nombre de tarea:          \Microsoft\Windows\Active Directory Rights Management Services Client\AD RMS Rights Policy Template Management (Manual)
+Hora pr¢xima ejecuci¢n:   No disponible
+Estado:                   Listo
+Modo de inicio de sesi¢n: Interactivo/En segundo plano
+
+Carpeta: \Microsoft\Windows\AppID
+Nombre de host:           SERVIDOR
+Nombre de tarea:          \Microsoft\Windows\AppID\SmartScreenSpecific
+Hora pr¢xima ejecuci¢n:   No disponible
+Estado:                   Listo
+Modo de inicio de sesi¢n: Interactivo/En segundo plano
+
+Carpeta: \Microsoft\Windows\Application Experience
+Nombre de host:           SERVIDOR
+Nombre de tarea:          \Microsoft\Windows\Application Experience\Microsoft Compatibility Appraiser
+Hora pr¢xima ejecuci¢n:   03/02/2026 01:37:53 a.m.
+Estado:                   Listo
+Modo de inicio de sesi¢n: Interactivo/En segundo plano
+
+Nombre de host:           SERVIDOR
+Nombre de tarea:          \Microsoft\Windows\Application Experience\ProgramDataUpdater
+Hora pr¢xima ejecuci¢n:   No disponible
+Estado:                   Listo
+Modo de inicio de sesi¢n: Interactivo/En segundo plano
+
+Carpeta: \Microsoft\Windows\Autochk
+Nombre de host:           SERVIDOR
+Nombre de tarea:          \Microsoft\Windows\Autochk\Proxy
+Hora pr¢xima ejecuci¢n:   No disponible
+Estado:                   Listo
+Modo de inicio de sesi¢n: Interactivo/En segundo plano
+
+Carpeta: \Microsoft\Windows\CertificateServicesClient
+Nombre de host:           SERVIDOR
+Nombre de tarea:          \Microsoft\Windows\CertificateServicesClient\UserTask
+Hora pr¢xima ejecuci¢n:   No disponible
+Estado:                   Listo
+Modo de inicio de sesi¢n: Interactivo/En segundo plano
+
+Nombre de host:           SERVIDOR
+Nombre de tarea:          \Microsoft\Windows\CertificateServicesClient\UserTask
+Hora pr¢xima ejecuci¢n:   No disponible
+Estado:                   Listo
+Modo de inicio de sesi¢n: Interactivo/En segundo plano
+
+Nombre de host:           SERVIDOR
+Nombre de tarea:          \Microsoft\Windows\CertificateServicesClient\UserTask
+Hora pr¢xima ejecuci¢n:   No disponible
+Estado:                   Listo
+Modo de inicio de sesi¢n: Interactivo/En segundo plano
+
+Nombre de host:           SERVIDOR
+Nombre de tarea:          \Microsoft\Windows\CertificateServicesClient\UserTask-Roam
+Hora pr¢xima ejecuci¢n:   No disponible
+Estado:                   Deshabilitado
+Modo de inicio de sesi¢n: Interactivo/En segundo plano
+
+Nombre de host:           SERVIDOR
+Nombre de tarea:          \Microsoft\Windows\CertificateServicesClient\UserTask-Roam
+Hora pr¢xima ejecuci¢n:   No disponible
+Estado:                   Deshabilitado
+Modo de inicio de sesi¢n: Interactivo/En segundo plano
+
+Carpeta: \Microsoft\Windows\Chkdsk
+Nombre de host:           SERVIDOR
+Nombre de tarea:          \Microsoft\Windows\Chkdsk\ProactiveScan
+Hora pr¢xima ejecuci¢n:   No disponible
+Estado:                   Listo
+Modo de inicio de sesi¢n: Interactivo/En segundo plano
+
+Carpeta: \Microsoft\Windows\Customer Experience Improvement Program
+Nombre de host:           SERVIDOR
+Nombre de tarea:          \Microsoft\Windows\Customer Experience Improvement Program\Consolidator
+Hora pr¢xima ejecuci¢n:   02/02/2026 09:00:00 p.m.
+Estado:                   Listo
+Modo de inicio de sesi¢n: Interactivo/En segundo plano
+
+Nombre de host:           SERVIDOR
+Nombre de tarea:          \Microsoft\Windows\Customer Experience Improvement Program\KernelCeipTask
+Hora pr¢xima ejecuci¢n:   No disponible
+Estado:                   Listo
+Modo de inicio de sesi¢n: Interactivo/En segundo plano
+
+Nombre de host:           SERVIDOR
+Nombre de tarea:          \Microsoft\Windows\Customer Experience Improvement Program\UsbCeip
+Hora pr¢xima ejecuci¢n:   No disponible
+Estado:                   Listo
+Modo de inicio de sesi¢n: Interactivo/En segundo plano
+
+Carpeta: \Microsoft\Windows\Customer Experience Improvement Program\Server
+Nombre de host:           SERVIDOR
+Nombre de tarea:          \Microsoft\Windows\Customer Experience Improvement Program\Server\ServerCeipAssistant
+Hora pr¢xima ejecuci¢n:   02/02/2026 11:29:24 p.m.
+Estado:                   Listo
+Modo de inicio de sesi¢n: Interactivo/En segundo plano
+
+Carpeta: \Microsoft\Windows\Data Integrity Scan
+Nombre de host:           SERVIDOR
+Nombre de tarea:          \Microsoft\Windows\Data Integrity Scan\Data Integrity Scan
+Hora pr¢xima ejecuci¢n:   08/02/2026 12:00:02 a.m.
+Estado:                   Listo
+Modo de inicio de sesi¢n: Interactivo/En segundo plano
+
+Nombre de host:           SERVIDOR
+Nombre de tarea:          \Microsoft\Windows\Data Integrity Scan\Data Integrity Scan
+Hora pr¢xima ejecuci¢n:   13/02/2026 02:04:33 a.m.
+Estado:                   Listo
+Modo de inicio de sesi¢n: Interactivo/En segundo plano
+
+Nombre de host:           SERVIDOR
+Nombre de tarea:          \Microsoft\Windows\Data Integrity Scan\Data Integrity Scan for Crash Recovery
+Hora pr¢xima ejecuci¢n:   No disponible
+Estado:                   Listo
+Modo de inicio de sesi¢n: Interactivo/En segundo plano
+
+Carpeta: \Microsoft\Windows\Defrag
+Nombre de host:           SERVIDOR
+Nombre de tarea:          \Microsoft\Windows\Defrag\ScheduledDefrag
+Hora pr¢xima ejecuci¢n:   No disponible
+Estado:                   Listo
+Modo de inicio de sesi¢n: Interactivo/En segundo plano
+
+Carpeta: \Microsoft\Windows\Device Setup
+Nombre de host:           SERVIDOR
+Nombre de tarea:          \Microsoft\Windows\Device Setup\Metadata Refresh
+Hora pr¢xima ejecuci¢n:   No disponible
+Estado:                   Listo
+Modo de inicio de sesi¢n: Interactivo/En segundo plano
+
+Carpeta: \Microsoft\Windows\IME
+Nombre de host:           SERVIDOR
+Nombre de tarea:          \Microsoft\Windows\IME\SQM data sender
+Hora pr¢xima ejecuci¢n:   No disponible
+Estado:                   Deshabilitado
+Modo de inicio de sesi¢n: Interactivo/En segundo plano
+
+Carpeta: \Microsoft\Windows\MemoryDiagnostic
+Nombre de host:           SERVIDOR
+Nombre de tarea:          \Microsoft\Windows\MemoryDiagnostic\ProcessMemoryDiagnosticEvents
+Hora pr¢xima ejecuci¢n:   No disponible
+Estado:                   Deshabilitado
+Modo de inicio de sesi¢n: Interactivo/En segundo plano
+
+Nombre de host:           SERVIDOR
+Nombre de tarea:          \Microsoft\Windows\MemoryDiagnostic\ProcessMemoryDiagnosticEvents
+Hora pr¢xima ejecuci¢n:   No disponible
+Estado:                   Deshabilitado
+Modo de inicio de sesi¢n: Interactivo/En segundo plano
+
+Nombre de host:           SERVIDOR
+Nombre de tarea:          \Microsoft\Windows\MemoryDiagnostic\ProcessMemoryDiagnosticEvents
+Hora pr¢xima ejecuci¢n:   No disponible
+Estado:                   Deshabilitado
+Modo de inicio de sesi¢n: Interactivo/En segundo plano
+
+Nombre de host:           SERVIDOR
+Nombre de tarea:          \Microsoft\Windows\MemoryDiagnostic\ProcessMemoryDiagnosticEvents
+Hora pr¢xima ejecuci¢n:   No disponible
+Estado:                   Deshabilitado
+Modo de inicio de sesi¢n: Interactivo/En segundo plano
+
+Nombre de host:           SERVIDOR
+Nombre de tarea:          \Microsoft\Windows\MemoryDiagnostic\RunFullMemoryDiagnostic
+Hora pr¢xima ejecuci¢n:   No disponible
+Estado:                   Deshabilitado
+Modo de inicio de sesi¢n: Interactivo/En segundo plano
+
+Carpeta: \Microsoft\Windows\MUI
+Nombre de host:           SERVIDOR
+Nombre de tarea:          \Microsoft\Windows\MUI\LPRemove
+Hora pr¢xima ejecuci¢n:   No disponible
+Estado:                   Listo
+Modo de inicio de sesi¢n: Interactivo/En segundo plano
+
+Carpeta: \Microsoft\Windows\Multimedia
+Nombre de host:           SERVIDOR
+Nombre de tarea:          \Microsoft\Windows\Multimedia\SystemSoundsService
+Hora pr¢xima ejecuci¢n:   No disponible
+Estado:                   Deshabilitado
+Modo de inicio de sesi¢n: Interactivo/En segundo plano
+
+Carpeta: \Microsoft\Windows\NetCfg
+Nombre de host:           SERVIDOR
+Nombre de tarea:          \Microsoft\Windows\NetCfg\BindingWorkItemQueueHandler
+Hora pr¢xima ejecuci¢n:   No disponible
+Estado:                   Listo
+Modo de inicio de sesi¢n: Interactivo/En segundo plano
+
+Carpeta: \Microsoft\Windows\NetTrace
+Nombre de host:           SERVIDOR
+Nombre de tarea:          \Microsoft\Windows\NetTrace\GatherNetworkInfo
+Hora pr¢xima ejecuci¢n:   No disponible
+Estado:                   Listo
+Modo de inicio de sesi¢n: Interactivo/En segundo plano
+
+Carpeta: \Microsoft\Windows\PI
+Nombre de host:           SERVIDOR
+Nombre de tarea:          \Microsoft\Windows\PI\SecureBootEncodeUEFI
+Hora pr¢xima ejecuci¢n:   No disponible
+Estado:                   Listo
+Modo de inicio de sesi¢n: Interactivo/En segundo plano
+
+Carpeta: \Microsoft\Windows\PLA
+Informaci¢n: no hay tareas programadas disponibles actualmente para el nivel de acceso.
+
+Carpeta: \Microsoft\Windows\Plug and Play
+Nombre de host:           SERVIDOR
+Nombre de tarea:          \Microsoft\Windows\Plug and Play\Device Install Reboot Required
+Hora pr¢xima ejecuci¢n:   No disponible
+Estado:                   Listo
+Modo de inicio de sesi¢n: Interactivo/En segundo plano
+
+Carpeta: \Microsoft\Windows\Power Efficiency Diagnostics
+Nombre de host:           SERVIDOR
+Nombre de tarea:          \Microsoft\Windows\Power Efficiency Diagnostics\AnalyzeSystem
+Hora pr¢xima ejecuci¢n:   No disponible
+Estado:                   Listo
+Modo de inicio de sesi¢n: Interactivo/En segundo plano
+
+Carpeta: \Microsoft\Windows\RAC
+Nombre de host:           SERVIDOR
+Nombre de tarea:          \Microsoft\Windows\RAC\RacTask
+Hora pr¢xima ejecuci¢n:   No disponible
+Estado:                   Deshabilitado
+Modo de inicio de sesi¢n: Interactivo/En segundo plano
+
+Nombre de host:           SERVIDOR
+Nombre de tarea:          \Microsoft\Windows\RAC\RacTask
+Hora pr¢xima ejecuci¢n:   No disponible
+Estado:                   Deshabilitado
+Modo de inicio de sesi¢n: Interactivo/En segundo plano
+
+Nombre de host:           SERVIDOR
+Nombre de tarea:          \Microsoft\Windows\RAC\RacTask
+Hora pr¢xima ejecuci¢n:   No disponible
+Estado:                   Deshabilitado
+Modo de inicio de sesi¢n: Interactivo/En segundo plano
+
+Carpeta: \Microsoft\Windows\Registry
+Nombre de host:           SERVIDOR
+Nombre de tarea:          \Microsoft\Windows\Registry\RegIdleBackup
+Hora pr¢xima ejecuci¢n:   No disponible
+Estado:                   Listo
+Modo de inicio de sesi¢n: Interactivo/En segundo plano
+
+Carpeta: \Microsoft\Windows\Server Manager
+Nombre de host:           SERVIDOR
+Nombre de tarea:          \Microsoft\Windows\Server Manager\CleanupOldPerfLogs
+Hora pr¢xima ejecuci¢n:   No disponible
+Estado:                   Listo
+Modo de inicio de sesi¢n: Interactivo/En segundo plano
+
+Nombre de host:           SERVIDOR
+Nombre de tarea:          \Microsoft\Windows\Server Manager\ServerManager
+Hora pr¢xima ejecuci¢n:   No disponible
+Estado:                   Listo
+Modo de inicio de sesi¢n: Interactivo/En segundo plano
+
+Carpeta: \Microsoft\Windows\Servicing
+Nombre de host:           SERVIDOR
+Nombre de tarea:          \Microsoft\Windows\Servicing\StartComponentCleanup
+Hora pr¢xima ejecuci¢n:   No disponible
+Estado:                   Listo
+Modo de inicio de sesi¢n: Interactivo/En segundo plano
+
+Carpeta: \Microsoft\Windows\Setup
+Nombre de host:           SERVIDOR
+Nombre de tarea:          \Microsoft\Windows\Setup\WS2012R2EOSNotify
+Hora pr¢xima ejecuci¢n:   No disponible
+Estado:                   Listo
+Modo de inicio de sesi¢n: Interactivo/En segundo plano
+
+Carpeta: \Microsoft\Windows\Shell
+Nombre de host:           SERVIDOR
+Nombre de tarea:          \Microsoft\Windows\Shell\CreateObjectTask
+Hora pr¢xima ejecuci¢n:   No disponible
+Estado:                   Listo
+Modo de inicio de sesi¢n: Interactivo/En segundo plano
+
+Carpeta: \Microsoft\Windows\Software Inventory Logging
+Nombre de host:           SERVIDOR
+Nombre de tarea:          \Microsoft\Windows\Software Inventory Logging\Collection
+Hora pr¢xima ejecuci¢n:   No disponible
+Estado:                   Deshabilitado
+Modo de inicio de sesi¢n: Interactivo/En segundo plano
+
+Nombre de host:           SERVIDOR
+Nombre de tarea:          \Microsoft\Windows\Software Inventory Logging\Configuration
+Hora pr¢xima ejecuci¢n:   No disponible
+Estado:                   Listo
+Modo de inicio de sesi¢n: Interactivo/En segundo plano
+
+Carpeta: \Microsoft\Windows\SoftwareProtectionPlatform
+Nombre de host:           SERVIDOR
+Nombre de tarea:          \Microsoft\Windows\SoftwareProtectionPlatform\SvcRestartTaskLogon
+Hora pr¢xima ejecuci¢n:   No disponible
+Estado:                   Deshabilitado
+Modo de inicio de sesi¢n: Interactivo/En segundo plano
+
+Carpeta: \Microsoft\Windows\Storage Tiers Management
+Nombre de host:           SERVIDOR
+Nombre de tarea:          \Microsoft\Windows\Storage Tiers Management\Storage Tiers Management Initialization
+Hora pr¢xima ejecuci¢n:   No disponible
+Estado:                   Listo
+Modo de inicio de sesi¢n: Interactivo/En segundo plano
+
+Nombre de host:           SERVIDOR
+Nombre de tarea:          \Microsoft\Windows\Storage Tiers Management\Storage Tiers Optimization
+Hora pr¢xima ejecuci¢n:   No disponible
+Estado:                   Deshabilitado
+Modo de inicio de sesi¢n: Interactivo/En segundo plano
+
+Carpeta: \Microsoft\Windows\Task Manager
+Nombre de host:           SERVIDOR
+Nombre de tarea:          \Microsoft\Windows\Task Manager\Interactive
+Hora pr¢xima ejecuci¢n:   No disponible
+Estado:                   Listo
+Modo de inicio de sesi¢n: Interactivo/En segundo plano
+
+Carpeta: \Microsoft\Windows\TaskScheduler
+Nombre de host:           SERVIDOR
+Nombre de tarea:          \Microsoft\Windows\TaskScheduler\Idle Maintenance
+Hora pr¢xima ejecuci¢n:   No disponible
+Estado:                   Deshabilitado
+Modo de inicio de sesi¢n: Interactivo/En segundo plano
+
+Nombre de host:           SERVIDOR
+Nombre de tarea:          \Microsoft\Windows\TaskScheduler\Manual Maintenance
+Hora pr¢xima ejecuci¢n:   No disponible
+Estado:                   Listo
+Modo de inicio de sesi¢n: Interactivo/En segundo plano
+
+Nombre de host:           SERVIDOR
+Nombre de tarea:          \Microsoft\Windows\TaskScheduler\Regular Maintenance
+Hora pr¢xima ejecuci¢n:   03/02/2026 02:30:54 a.m.
+Estado:                   Listo
+Modo de inicio de sesi¢n: Interactivo/En segundo plano
+
+Carpeta: \Microsoft\Windows\TextServicesFramework
+Nombre de host:           SERVIDOR
+Nombre de tarea:          \Microsoft\Windows\TextServicesFramework\MsCtfMonitor
+Hora pr¢xima ejecuci¢n:   No disponible
+Estado:                   Ejecut ndose
+Modo de inicio de sesi¢n: Interactivo/En segundo plano
+
+Carpeta: \Microsoft\Windows\Time Synchronization
+Nombre de host:           SERVIDOR
+Nombre de tarea:          \Microsoft\Windows\Time Synchronization\SynchronizeTime
+Hora pr¢xima ejecuci¢n:   No disponible
+Estado:                   Listo
+Modo de inicio de sesi¢n: Interactivo/En segundo plano
+
+Carpeta: \Microsoft\Windows\Time Zone
+Nombre de host:           SERVIDOR
+Nombre de tarea:          \Microsoft\Windows\Time Zone\SynchronizeTimeZone
+Hora pr¢xima ejecuci¢n:   No disponible
+Estado:                   Listo
+Modo de inicio de sesi¢n: Interactivo/En segundo plano
+
+Carpeta: \Microsoft\Windows\WDI
+Nombre de host:           SERVIDOR
+Nombre de tarea:          \Microsoft\Windows\WDI\ResolutionHost
+Hora pr¢xima ejecuci¢n:   No disponible
+Estado:                   Listo
+Modo de inicio de sesi¢n: Interactivo/En segundo plano
+
+Carpeta: \Microsoft\Windows\Windows Error Reporting
+Nombre de host:           SERVIDOR
+Nombre de tarea:          \Microsoft\Windows\Windows Error Reporting\QueueReporting
+Hora pr¢xima ejecuci¢n:   No disponible
+Estado:                   Listo
+Modo de inicio de sesi¢n: Interactivo/En segundo plano
+
+Nombre de host:           SERVIDOR
+Nombre de tarea:          \Microsoft\Windows\Windows Error Reporting\QueueReporting
+Hora pr¢xima ejecuci¢n:   No disponible
+Estado:                   Listo
+Modo de inicio de sesi¢n: Interactivo/En segundo plano
+
+Carpeta: \Microsoft\Windows\Windows Filtering Platform
+Nombre de host:           SERVIDOR
+Nombre de tarea:          \Microsoft\Windows\Windows Filtering Platform\BfeOnServiceStartTypeChange
+Hora pr¢xima ejecuci¢n:   No disponible
+Estado:                   Listo
+Modo de inicio de sesi¢n: Interactivo/En segundo plano
+
+Carpeta: \Microsoft\Windows\WindowsColorSystem
+Nombre de host:           SERVIDOR
+Nombre de tarea:          \Microsoft\Windows\WindowsColorSystem\Calibration Loader
+Hora pr¢xima ejecuci¢n:   No disponible
+Estado:                   Deshabilitado
+Modo de inicio de sesi¢n: Interactivo/En segundo plano
+
+Nombre de host:           SERVIDOR
+Nombre de tarea:          \Microsoft\Windows\WindowsColorSystem\Calibration Loader
+Hora pr¢xima ejecuci¢n:   No disponible
+Estado:                   Deshabilitado
+Modo de inicio de sesi¢n: Interactivo/En segundo plano
+
+Carpeta: \Microsoft\Windows\WindowsUpdate
+Nombre de host:           SERVIDOR
+Nombre de tarea:          \Microsoft\Windows\WindowsUpdate\AUFirmwareInstall
+Hora pr¢xima ejecuci¢n:   No disponible
+Estado:                   Deshabilitado
+Modo de inicio de sesi¢n: Interactivo/En segundo plano
+
+Nombre de host:           SERVIDOR
+Nombre de tarea:          \Microsoft\Windows\WindowsUpdate\AUScheduledInstall
+Hora pr¢xima ejecuci¢n:   No disponible
+Estado:                   Deshabilitado
+Modo de inicio de sesi¢n: Interactivo/En segundo plano
+
+Nombre de host:           SERVIDOR
+Nombre de tarea:          \Microsoft\Windows\WindowsUpdate\AUSessionConnect
+Hora pr¢xima ejecuci¢n:   No disponible
+Estado:                   Deshabilitado
+Modo de inicio de sesi¢n: Interactivo/En segundo plano
+
+Nombre de host:           SERVIDOR
+Nombre de tarea:          \Microsoft\Windows\WindowsUpdate\AUSessionConnect
+Hora pr¢xima ejecuci¢n:   No disponible
+Estado:                   Deshabilitado
+Modo de inicio de sesi¢n: Interactivo/En segundo plano
+
+Nombre de host:           SERVIDOR
+Nombre de tarea:          \Microsoft\Windows\WindowsUpdate\AUSessionConnect
+Hora pr¢xima ejecuci¢n:   No disponible
+Estado:                   Deshabilitado
+Modo de inicio de sesi¢n: Interactivo/En segundo plano
+
+Nombre de host:           SERVIDOR
+Nombre de tarea:          \Microsoft\Windows\WindowsUpdate\AUSessionConnect
+Hora pr¢xima ejecuci¢n:   No disponible
+Estado:                   Deshabilitado
+Modo de inicio de sesi¢n: Interactivo/En segundo plano
+
+Nombre de host:           SERVIDOR
+Nombre de tarea:          \Microsoft\Windows\WindowsUpdate\AUSessionConnect
+Hora pr¢xima ejecuci¢n:   No disponible
+Estado:                   Deshabilitado
+Modo de inicio de sesi¢n: Interactivo/En segundo plano
+
+Nombre de host:           SERVIDOR
+Nombre de tarea:          \Microsoft\Windows\WindowsUpdate\Scheduled Start
+Hora pr¢xima ejecuci¢n:   02/02/2026 10:32:51 p.m.
+Estado:                   Listo
+Modo de inicio de sesi¢n: Interactivo/En segundo plano
+
+Nombre de host:           SERVIDOR
+Nombre de tarea:          \Microsoft\Windows\WindowsUpdate\Scheduled Start
+Hora pr¢xima ejecuci¢n:   02/02/2026 10:32:41 p.m.
+Estado:                   Listo
+Modo de inicio de sesi¢n: Interactivo/En segundo plano
+
+Nombre de host:           SERVIDOR
+Nombre de tarea:          \Microsoft\Windows\WindowsUpdate\Scheduled Start
+Hora pr¢xima ejecuci¢n:   02/02/2026 10:32:40 p.m.
+Estado:                   Listo
+Modo de inicio de sesi¢n: Interactivo/En segundo plano
+
+Nombre de host:           SERVIDOR
+Nombre de tarea:          \Microsoft\Windows\WindowsUpdate\Scheduled Start
+Hora pr¢xima ejecuci¢n:   02/02/2026 10:32:20 p.m.
+Estado:                   Listo
+Modo de inicio de sesi¢n: Interactivo/En segundo plano
+
+Nombre de host:           SERVIDOR
+Nombre de tarea:          \Microsoft\Windows\WindowsUpdate\Scheduled Start With Network
+Hora pr¢xima ejecuci¢n:   02/02/2026 10:33:10 p.m.
+Estado:                   Listo
+Modo de inicio de sesi¢n: Interactivo/En segundo plano
+
+Nombre de host:           SERVIDOR
+Nombre de tarea:          \Microsoft\Windows\WindowsUpdate\Scheduled Start With Network
+Hora pr¢xima ejecuci¢n:   02/02/2026 10:32:48 p.m.
+Estado:                   Listo
+Modo de inicio de sesi¢n: Interactivo/En segundo plano
+
+Nombre de host:           SERVIDOR
+Nombre de tarea:          \Microsoft\Windows\WindowsUpdate\Scheduled Start With Network
+Hora pr¢xima ejecuci¢n:   02/02/2026 10:33:03 p.m.
+Estado:                   Listo
+Modo de inicio de sesi¢n: Interactivo/En segundo plano
+
+Nombre de host:           SERVIDOR
+Nombre de tarea:          \Microsoft\Windows\WindowsUpdate\Scheduled Start With Network
+Hora pr¢xima ejecuci¢n:   02/02/2026 10:32:42 p.m.
+Estado:                   Listo
+Modo de inicio de sesi¢n: Interactivo/En segundo plano
+
+Carpeta: \Microsoft\Windows\Wininet
+Nombre de host:           SERVIDOR
+Nombre de tarea:          \Microsoft\Windows\Wininet\CacheTask
+Hora pr¢xima ejecuci¢n:   No disponible
+Estado:                   Ejecut ndose
+Modo de inicio de sesi¢n: Interactivo/En segundo plano
+
+Carpeta: \Microsoft\Windows\Workplace Join
+Nombre de host:           SERVIDOR
+Nombre de tarea:          \Microsoft\Windows\Workplace Join\Automatic-Workplace-Join
+Hora pr¢xima ejecuci¢n:   No disponible
+Estado:                   Deshabilitado
+Modo de inicio de sesi¢n: Interactivo/En segundo plano
+
+Carpeta: \Microsoft\Windows\WS
+Nombre de host:           SERVIDOR
+Nombre de tarea:          \Microsoft\Windows\WS\WSTask
+Hora pr¢xima ejecuci¢n:   No disponible
+Estado:                   Listo
+Modo de inicio de sesi¢n: Interactivo/En segundo plano
+
+Carpeta: \Mozilla
+Nombre de host:           SERVIDOR
+Nombre de tarea:          \Mozilla\Firefox Default Browser Agent 308046B0AF4A39CB
+Hora pr¢xima ejecuci¢n:   03/02/2026 09:22:18 a.m.
+Estado:                   Listo
+Modo de inicio de sesi¢n: Solo interactivo

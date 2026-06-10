@@ -1,0 +1,30 @@
+
+Carpeta: \
+Nombre de host:                                        SERVIDOR
+Nombre de tarea:                                       \NewInDaily
+Hora pr¢xima ejecuci¢n:                                04/02/2026 06:00:00 p.m.
+Estado:                                                Listo
+Modo de inicio de sesi¢n:                              Solo interactivo
+éltimo tiempo de ejecuci¢n:                            03/02/2026 06:00:01 p.m.
+éltimo resultado:                                      -2147024894
+Autor:                                                 santiago
+Tarea que se ejecutar :                                C:\Users\santiago\NEW IN\BIN\daily.cmd
+Iniciar en:                                            No disponible
+Comentario:                                            No disponible
+Estado de tarea programada:                            Habilitada
+Tiempo de inactividad:                                 Deshabilitado
+Administraci¢n de energ¡a:                             Detener en modo Bater¡a, No iniciar en Bater¡a
+Ejecutar como usuario:                                 SERVIDOR\santiago
+Eliminar tarea si no se vuelve a programar:            Deshabilitado
+Eliminar tarea si ejecuta durante X horas y X minutos: 72:00:00
+Programaci¢n:                                          Datos de programaci¢n no disponibles en este formato.
+Tipo de programaci¢n:                                  Diariamente
+Hora de inicio:                                        06:00:00 p.m.
+Fecha de inicio:                                       02/02/2026
+Fecha final:                                           No disponible
+D¡as:                                                  Cada 1 d¡a(s)
+Meses:                                                 No disponible
+Repetir: cada:                                         Deshabilitado
+Repetir: hasta: hora:                                  Deshabilitado
+Repetir: hasta: duraci¢n:                              Deshabilitado
+Repetir: detener si a£n se ejecuta:                    Deshabilitado

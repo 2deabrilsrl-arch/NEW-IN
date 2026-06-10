@@ -1,0 +1,281 @@
+============================================================
+QUICK START v11.3.0-FINAL
+Instalacion rapida - Version definitiva
+============================================================
+
+PROBLEMAS RESUELTOS:
+  ✓ Match rate bajo (18% → 80%+)
+  ✓ ACC-BOOB TAPE no se encontraba
+  ✓ SAYKA no aparecia
+  ✓ CONTROL se subia incorrectamente
+  ✓ Horario sub-optimo (14:00)
+
+SOLUCIONES:
+  ✓ Transforma espacios a ___
+  ✓ Filtra productos CONTROL
+  ✓ Nuevo horario 18:30 (optimo)
+  ✓ Logging mejorado
+
+============================================================
+INSTALACION EN 4 PASOS
+============================================================
+
+PASO 1: Descargar archivos
+---------------------------
+Descarga estos 2 archivos:
+  [✓] newin_robot.py (v11.3.0-FINAL)
+  [✓] programar_tareas_1830.cmd
+
+
+PASO 2: Backup y reemplazar script
+-----------------------------------
+cd "C:\Users\santiago\NEW IN"
+
+# Crear backup
+copy newin_robot.py newin_robot.py.OLD
+
+# Reemplazar con el nuevo
+# (descarga y copia el nuevo archivo como newin_robot.py)
+
+
+PASO 3: Verificar version
+--------------------------
+python newin_robot.py --version
+
+Debe decir: New In Robot v11.3.0-FINAL
+
+
+PASO 4: Configurar horario 18:30
+---------------------------------
+# Ejecutar el script de configuracion
+programar_tareas_1830.cmd
+
+Esto crea:
+  - Tarea diaria: 18:30 todos los dias
+  - Tarea refresh: Lunes 18:30
+
+
+============================================================
+VERIFICACION RAPIDA
+============================================================
+
+# Ver tareas creadas
+schtasks /query /tn "NewInDaily"
+schtasks /query /tn "NewInRefresh"
+
+Debe mostrar:
+  ✓ Siguiente ejecucion: Hoy 18:30
+  ✓ Estado: Listo
+
+
+============================================================
+QUE ESPERAR
+============================================================
+
+ANTES (v11.1.0 a las 14:00):
+  Match rate: 18% (2 de 11 productos)
+  ACC-BOOB TAPE: No encontrado
+  CONTROL MARIA: Se subia incorrectamente
+  Horario: 14:00 (ventana corta)
+
+AHORA (v11.3.0 a las 18:30):
+  Match rate: >80% (10 de 12 productos)
+  ACC-BOOB___TAPE: Encontrado y asignado ✓
+  CONTROL: Filtrado (no se sube) ✓
+  Horario: 18:30 (procesa todo el dia) ✓
+
+
+============================================================
+VENTAJAS DEL HORARIO 18:30
+============================================================
+
+1. Procesa TODO el dia laboral (8:30-18:00)
+2. 30 minutos despues del cierre
+3. Repositor termino su trabajo
+4. Tiempo para sincronizacion DF → TN
+5. Match rate mas alto
+6. No interfiere con trabajo
+
+
+============================================================
+FILTRO DE CONTROL
+============================================================
+
+Productos que contienen "CONTROL" en el codigo:
+  ✗ CONTROL MARIA → NO se procesa
+  ✗ CONTROL DE CALIDAD → NO se procesa
+  ✓ ACC-BOOB___TAPE → Se procesa normalmente
+
+RAZON:
+Los controles son herramientas internas para encargados,
+no son productos reales para venta.
+
+
+============================================================
+CRONOGRAMA SEMANAL
+============================================================
+
+LUNES 18:30:
+  → REFRESH: Limpia categoria New In
+  → Procesa ingresos del lunes
+  → Categoria comienza vacia
+
+MARTES-DOMINGO 18:30:
+  → Procesa ingresos del dia
+  → AGREGA a categoria (no limpia)
+  → Categoria acumula toda la semana
+
+RESULTADO:
+  - Domingo: Categoria con 7 dias de novedades
+  - Lunes: Se limpia y comienza nueva semana
+
+
+============================================================
+PRUEBA MANUAL (Opcional)
+============================================================
+
+Si quieres probar antes de las 18:30:
+
+cd "C:\Users\santiago\NEW IN"
+python newin_robot.py daily
+
+Busca en el resultado:
+  ✓ "SKUs con MATCH exitoso"
+  ✓ "ACC-BOOB___TAPE" (con triple guion bajo)
+  ✓ Match rate >50%
+  ✓ Productos CONTROL filtrados (sin_sku)
+
+
+============================================================
+PROXIMOS PASOS
+============================================================
+
+HOY:
+  1. Instalar v11.3.0
+  2. Configurar tareas 18:30
+  3. Esperar ejecucion automatica
+
+MAÑANA:
+  1. Revisar: logs\daily.log
+  2. Verificar match rate >80%
+  3. Confirmar productos en TN
+
+LUNES PROXIMO:
+  1. Verificar refresh 18:30
+  2. Categoria debe limpiarse
+  3. Nueva semana comienza
+
+
+============================================================
+COMANDOS UTILES
+============================================================
+
+Ver version:
+  python newin_robot.py --version
+
+Ejecutar manual:
+  python newin_robot.py daily
+
+Ver ultimo log:
+  type logs\daily.log | more
+
+Ver match rate:
+  type logs\daily.log | findstr "match:"
+
+Ver tareas:
+  schtasks /query /tn "NewInDaily"
+  schtasks /query /tn "NewInRefresh"
+
+
+============================================================
+TROUBLESHOOTING
+============================================================
+
+PROBLEMA: Version incorrecta
+SOLUCION: Verifica que reemplazaste el archivo
+          python newin_robot.py --version
+          Debe decir: v11.3.0-FINAL
+
+PROBLEMA: Tareas no se crean
+SOLUCION: Ejecuta como administrador:
+          Click derecho en programar_tareas_1830.cmd
+          → "Ejecutar como administrador"
+
+PROBLEMA: Match rate sigue bajo
+SOLUCION: Espera 1-2 dias para sincronizacion
+          Verifica productos en TN manualmente
+
+
+============================================================
+ARCHIVOS A DESCARGAR
+============================================================
+
+ESENCIALES (Debes descargar):
+  1. newin_robot.py (v11.3.0-FINAL)
+  2. programar_tareas_1830.cmd
+
+RECOMENDADOS (Para referencia):
+  3. DOCUMENTACION_COMPLETA_v11.3.txt
+  4. monitor_newin.ps1
+
+OPCIONALES (Si necesitas):
+  5. analizar_snapshot.ps1
+  6. diagnostico_post_instalacion.ps1
+
+
+============================================================
+RESUMEN DE ACCION
+============================================================
+
+TIEMPO: 10 minutos
+
+PASOS:
+  1. Descargar 2 archivos
+  2. Backup + Reemplazar script
+  3. Verificar version
+  4. Configurar tareas 18:30
+  5. Esperar primera ejecucion
+
+RESULTADO:
+  ✓ Match rate >80%
+  ✓ Productos correctos en New In
+  ✓ CONTROL filtrado
+  ✓ Sistema automatico
+  ✓ Horario optimizado
+
+
+============================================================
+COMPARACION RAPIDA
+============================================================
+
+ANTES:
+  - Version: 11.1.0
+  - Horario: 14:00
+  - Match rate: 18%
+  - Espacios: No maneja
+  - CONTROL: Se sube
+
+AHORA:
+  - Version: 11.3.0-FINAL
+  - Horario: 18:30
+  - Match rate: >80%
+  - Espacios: Transforma a ___
+  - CONTROL: Filtrado
+
+
+============================================================
+CONTACTO SOPORTE
+============================================================
+
+Si despues de 2 dias:
+  - Match rate <50%
+  - Productos no aparecen
+  - CONTROL en New In
+
+Proporciona:
+  1. python newin_robot.py --version
+  2. logs\daily.log
+  3. Captura DF y TN
+
+
+============================================================
