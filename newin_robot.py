@@ -71,7 +71,7 @@ except ImportError as e:
 # ============================================================
 
 MAIN_ENV = {}
-VERSION = "12.2.0-REPORTES"
+VERSION = "12.3.0"
 
 DEFAULT_BASE_DIR = r"C:\Users\santiago\NEW IN"
 DEFAULT_DATA_DIR = os.path.join(DEFAULT_BASE_DIR, "data")
@@ -475,22 +475,23 @@ def _extract_items_from_df_json(js: Any) -> List[Dict]:
     return all_lists
 
 
-def df_get_movimientos_paginated(fecha: dt.date) -> List[Dict]:
+def df_get_movimientos_paginated(fecha: dt.date) -> Tuple[List[Dict], bool]:
     """
-    CORREGIDO: Obtiene movimientos con paginación completa
-    
-    La API de Dragonfish limita a 200 items por página.
-    Esta función itera sobre todas las páginas hasta que no haya más datos.
+    Obtiene movimientos con paginación completa.
+    Retorna: (items, network_error)
+    network_error=True si hubo timeout o error de red (no avanzar last_run_date)
+    network_error=False si la consulta fue exitosa (aunque no haya items)
     """
     base = (env("DF_BASE_URL", "") or "").rstrip("/")
     if not base:
-        print("[DF] ⚠ DF_BASE_URL no configurada.", file=sys.stderr)
-        return []
-    
+        print("[DF] DF_BASE_URL no configurada.", file=sys.stderr)
+        return [], False
+
     all_items = []
     page = 1
-    max_pages = 50  # Límite de seguridad
-    
+    max_pages = 50
+    network_error = False
+
     params_base = {
         "OrigenDestino": env("DF_ORIGENDESTINO", "STOCK") or "STOCK",
         "Tipo": env("DF_TIPO", "1") or "1",
@@ -498,54 +499,56 @@ def df_get_movimientos_paginated(fecha: dt.date) -> List[Dict]:
         "Fecha": fecha.strftime("%Y-%m-%d"),
         "limit": "200"
     }
-    
+
     url = f"{base}/Movimientodestock/"
-    
+
     print(f"[DF] Consultando {fecha} con paginación...")
-    
+
     while page <= max_pages:
         params = params_base.copy()
         params["page"] = str(page)
-        
+
         try:
             resp = requests.get(url, headers=df_headers(), params=params, timeout=30)
         except requests.RequestException as e:
             log_error(f"Error de red consultando DF page={page}", e)
+            network_error = True
             break
-        
+
         if resp.status_code == 404:
             if page == 1:
                 print(f"[DF] {params_base['Fecha']}: 404 (sin movimientos)")
             break
-        
+
         if resp.status_code != 200:
             print(f"[DF] {params_base['Fecha']}: HTTP {resp.status_code} page={page}")
+            network_error = True
             break
-        
+
         try:
             js = resp.json()
         except Exception as e:
             log_error(f"Respuesta no JSON page={page}", e)
+            network_error = True
             break
-        
+
         items = _extract_items_from_df_json(js)
-        
+
         if not items:
             print(f"[DF] {fecha} page={page}: sin items, fin de paginación")
             break
-        
+
         all_items.extend(items)
         print(f"[DF] {fecha} page={page}: {len(items)} items (acumulado={len(all_items)})")
-        
-        # Si recibimos menos de 200, asumimos que es la última página
+
         if len(items) < 200:
             print(f"[DF] {fecha}: fin de paginación (última página con {len(items)} items)")
             break
-        
+
         page += 1
-    
+
     print(f"[DF] {fecha}: Total items={len(all_items)} en {page} página(s)")
-    return all_items
+    return all_items, network_error
 
 
 # ============================================================
@@ -583,10 +586,10 @@ def parse_date(s: str) -> dt.date:
     return dt.datetime.strptime(s, "%Y-%m-%d").date()
 
 
-def accumulate_since_last_run(today: Optional[dt.date] = None) -> Tuple[List[str], Dict[str, List[str]]]:
+def accumulate_since_last_run(today: Optional[dt.date] = None) -> Tuple[List[str], Dict[str, List[str]], bool]:
     """
     Acumula SKUs desde última ejecución exitosa hasta hoy.
-    Retorna: (lista_skus_unicos, dict_por_dia)
+    Retorna: (lista_skus_unicos, dict_por_dia, network_error)
     """
     if today is None:
         today = dt.date.today()
@@ -618,7 +621,10 @@ def accumulate_since_last_run(today: Optional[dt.date] = None) -> Tuple[List[str
     cur = start
     
     while cur <= today:
-        items = df_get_movimientos_paginated(cur)  # Ahora con paginación
+        items, net_err = df_get_movimientos_paginated(cur)
+        if net_err:
+            print(f"[ACC] Error de red en {cur}, abortando ventana")
+            return [], {}, True
         day = []
         miss = 0
         sample_miss = []
@@ -646,7 +652,7 @@ def accumulate_since_last_run(today: Optional[dt.date] = None) -> Tuple[List[str
             dedup.append(s)
     
     print(f"[ACC] SKUs únicos: {len(dedup)}")
-    return dedup, by_day
+    return dedup, by_day, False
 
 
 # ============================================================
@@ -1040,8 +1046,12 @@ def daily_update() -> int:
     
     # 3. Acumular SKUs desde último run
     today = dt.date.today()
-    skus, by_day = accumulate_since_last_run(today=today)
-    
+    skus, by_day, network_error = accumulate_since_last_run(today=today)
+
+    if network_error:
+        print("[WARN] Error de red en Dragonfish — last_run_date NO actualizado, se reintentara mañana")
+        return 1
+
     if not skus:
         print("[INFO] Sin SKUs para procesar en esta ventana")
         st = get_state()
